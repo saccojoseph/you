@@ -1,6 +1,3 @@
-<img width="1280" height="720" alt="clipboard" src="https://github.com/user-attachments/assets/cb92aa3f-fad7-41f1-b822-6530a58b27f3" />
-<img width="1280" height="1656" alt="clipboard" src="https://github.com/user-attachments/assets/8bed4e01-7610-473c-850f-0af545f53ecd" />
-<img width="1280" height="720" alt="clipboard" src="https://github.com/user-attachments/assets/b5455b9a-bdbb-4d75-bbca-82e575033c37" />
 # YOU
 
 YOU is an open source prototype for a personal context layer: a private, inspectable memory of the people, plans, preferences, routines, and commitments in your life. It can help an assistant make useful suggestions while showing why it believes something and how certain it is. **The last agent you’ll ever need** is the product ambition: YOU stays with you while underlying models can change.
@@ -14,6 +11,16 @@ The model is replaceable. The memory belongs to the user. The long term goal is 
 [Open the interactive YOU demo](https://you-relationship-memory.saccojoseph961968.chatgpt.site/) · [Follow the 90-second walkthrough](docs/DEMO.md)
 
 The public demo starts with **Alex**, a fictional persona, and invented people and events. It does not import contacts, read your computer, or connect to your accounts. Anything you type into the demo stays in that browser's local storage unless you choose to export it. Use fictional details when sharing screenshots or feedback.
+
+### Screenshots
+
+Fictional sample data, captured from the running prototype:
+
+| For you | Ask YOU |
+| --- | --- |
+| ![YOU's For you screen with a gentle check-in and evidence card](https://github.com/user-attachments/assets/b5455b9a-bdbb-4d75-bbca-82e575033c37) | ![Ask YOU answering an uncertain question with its source](https://github.com/user-attachments/assets/cb92aa3f-fad7-41f1-b822-6530a58b27f3) |
+
+![Memory screen showing known, inferred, and unknown facts with sources and confidence](https://github.com/user-attachments/assets/8bed4e01-7610-473c-850f-0af545f53ecd)
 
 ## Try it locally
 
