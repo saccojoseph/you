@@ -22,8 +22,8 @@ Open the local URL printed by the development server. `npm run build` makes a pr
 - A first-run experience that selects possible sources and an assistant harness, creates a personal engram, and saves routine preferences. All connection and scheduling choices are simulated.
 - A calm suggestion feed for check-ins, plans, relationships, and open commitments.
 - A memory browser with **known, inferred, unknown, and needs review** states, confidence, provenance, and verification dates.
-- People profiles, a sample relationship history, a timeline, and source explanations.
-- Manual memories and important dates; profile editing; local reminders; dismissing and handling suggestions.
+- People profiles, a relationship map, a sample timeline, and source explanations.
+- Manual memories, important dates, and reminders; profile editing; dismissing and handling suggestions.
 - A simulated Ask YOU view that answers from visible sample memory and says when it does not know.
 - Connection placeholders, per-memory availability, local export, and demo reset.
 
