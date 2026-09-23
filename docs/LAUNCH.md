@@ -47,11 +47,14 @@ Primary goal: collect at least 15 specific pieces of feedback on trust, usefulne
 | When | Channel | Action | Measure |
 | --- | --- | --- | --- |
 | Day 1 | Instagram | Personal launch post with an honest prototype disclosure and one question | Comments with specific use cases or boundaries |
+| Day 1 | LinkedIn | Founder post about portable, evidence-based personal context, with an honest prototype disclosure | Comments about trust and cross-agent use |
 | Days 1–3 | Reddit | One project showcase in a community that permits it; a separate, tailored comment in an allowed GitHub promotion thread | Substantive replies and GitHub issues |
 | Days 3–7 | GitHub | Convert repeated feedback into clearly scoped issues; reply to contributors | Issues opened and contributors engaged |
 | Week 2 | Owned channels | Show a one-minute walkthrough of known / inferred / unknown facts and source controls | Demo visits and feedback quality |
 
 Avoid identical cross-posts, AI capability overclaims, and communities that prohibit self-promotion. Do not use a personal relationship story or real account data in public launch assets. Decide whether a dedicated YOU social account is worthwhile after seeing the first feedback.
+
+Published LinkedIn post (September 23, 2026): https://www.linkedin.com/feed/update/urn:li:share:7508518775856746497/
 
 Current platform guidance: [Show HN](https://news.ycombinator.com/showhn.html), [Product Hunt featuring](https://help.producthunt.com/en/articles/9883485-product-hunt-featuring-guidelines), [Reddit community self-promotion rules](https://www.business.reddit.com/learning-hub/articles/how-to-work-with-moderators-on-reddit).
 
