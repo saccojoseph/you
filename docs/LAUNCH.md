@@ -33,11 +33,14 @@ I’m building YOU: an open source memory layer for your life that any authorize
 
 ## Outreach sequence
 
-1. Publish a public repository with a clear README, license, privacy notes, and 2–3 screenshots or a short screen recording. Fill in the actual demo and GitHub links in the copy above.
-2. Invite feedback from privacy, accessibility, MCP, and personal knowledge management communities. Ask about specific product tradeoffs rather than promising an all knowing assistant.
-3. Share the prototype and a short explanation of its evidence model. Show a known fact, an inference, and an unknown side by side.
-4. Collect feature requests and connector feasibility reports in GitHub issues. Prioritize the local data store and one consented connector before broader claims.
-5. Publish a milestone update when the first real MCP adapter works across at least two different assistant harnesses.
+1. Publish a public repository with a clear README, license, privacy notes, and 2–3 screenshots or a short screen recording. Fill in the actual demo and GitHub links in the copy above. Make the demo publicly accessible before linking it in public posts; it is currently owner-private.
+2. Start with targeted feedback from developers working on MCP, local-first software, accessibility, and personal knowledge management. Ask about the evidence model and consent boundaries. Record concrete issues in GitHub.
+3. Share one thoughtful Reddit feedback post in an appropriate project-sharing community after checking its current rules. Disclose that you built YOU, explain what works today, and ask one specific question. Participate in replies; do not cross-post the same pitch to multiple communities.
+4. Make a Show HN post only when visitors can actually try a public demo or install a working release. Be available to discuss the design and limitations. Do not call this a Launch HN, which is a separate YC format.
+5. Reserve Product Hunt for a more usable milestone: a genuine local data store, a consented connector, and an MCP path working with at least two harnesses. Its current featuring guidance disfavors vaporware.
+6. Publish a short milestone update or demo video showing a known fact, an inference, and an unknown side by side. Track useful feedback and repeat usage, not just stars or upvotes. Avoid paid ads until onboarding and retention can be measured.
+
+Current platform guidance: [Show HN](https://news.ycombinator.com/showhn.html), [Product Hunt featuring](https://help.producthunt.com/en/articles/9883485-product-hunt-featuring-guidelines), [Reddit community self-promotion rules](https://www.business.reddit.com/learning-hub/articles/how-to-work-with-moderators-on-reddit).
 
 ## Demo talking points
 
