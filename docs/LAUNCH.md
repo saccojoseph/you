@@ -24,21 +24,34 @@ The first interactive prototype is now available. It opens with a first-run flow
 
 I’d love feedback on the question at the center of it: **What should a personal assistant remember, and what should it never assume?**
 
-Try the demo: `[DEMO_URL]`  
-Explore the code: `[GITHUB_URL]`
+Try the demo: https://you-relationship-memory.saccojoseph961968.chatgpt.site/
+Explore the code: https://github.com/saccojoseph/you
 
 ## Short social version
 
-I’m building YOU: an open source memory layer for your life that any authorized AI assistant could use. It remembers people, plans, preferences, and commitments with sources and confidence attached. The first interactive prototype uses fictional data. What should a personal assistant remember for you? `[GITHUB_URL]`
+I’m building YOU: an open source memory layer for your life that any authorized AI assistant could use. The vision covers people, plans, preferences, and commitments with sources and confidence attached. The first interactive prototype uses fictional data and has no live connectors. What should a personal assistant remember for you? https://github.com/saccojoseph/you
 
 ## Outreach sequence
 
-1. Publish a public repository with a clear README, license, privacy notes, and 2–3 screenshots or a short screen recording. Fill in the actual demo and GitHub links in the copy above. Make the demo publicly accessible before linking it in public posts; it is currently owner-private.
+1. Publish a public repository with a clear README, license, privacy notes, and 2–3 screenshots or a short screen recording. The repository and fictional-data demo are now public.
 2. Start with targeted feedback from developers working on MCP, local-first software, accessibility, and personal knowledge management. Ask about the evidence model and consent boundaries. Record concrete issues in GitHub.
 3. Share one thoughtful Reddit feedback post in an appropriate project-sharing community after checking its current rules. Disclose that you built YOU, explain what works today, and ask one specific question. Participate in replies; do not cross-post the same pitch to multiple communities.
 4. Make a Show HN post only when visitors can actually try a public demo or install a working release. Be available to discuss the design and limitations. Do not call this a Launch HN, which is a separate YC format.
 5. Reserve Product Hunt for a more usable milestone: a genuine local data store, a consented connector, and an MCP path working with at least two harnesses. Its current featuring guidance disfavors vaporware.
 6. Publish a short milestone update or demo video showing a known fact, an inference, and an unknown side by side. Track useful feedback and repeat usage, not just stars or upvotes. Avoid paid ads until onboarding and retention can be measured.
+
+## First two weeks: feedback campaign
+
+Primary goal: collect at least 15 specific pieces of feedback on trust, usefulness, and the proposed cross-agent design from developers and potential users. Secondary goal: identify 3 people willing to test a future real connector. These are targets, not claims of current traction. No paid spend is needed for this prototype stage.
+
+| When | Channel | Action | Measure |
+| --- | --- | --- | --- |
+| Day 1 | Instagram | Personal launch post with an honest prototype disclosure and one question | Comments with specific use cases or boundaries |
+| Days 1–3 | Reddit | One project showcase in a community that permits it; a separate, tailored comment in an allowed GitHub promotion thread | Substantive replies and GitHub issues |
+| Days 3–7 | GitHub | Convert repeated feedback into clearly scoped issues; reply to contributors | Issues opened and contributors engaged |
+| Week 2 | Owned channels | Show a one-minute walkthrough of known / inferred / unknown facts and source controls | Demo visits and feedback quality |
+
+Avoid identical cross-posts, AI capability overclaims, and communities that prohibit self-promotion. Do not use a personal relationship story or real account data in public launch assets. Decide whether a dedicated YOU social account is worthwhile after seeing the first feedback.
 
 Current platform guidance: [Show HN](https://news.ycombinator.com/showhn.html), [Product Hunt featuring](https://help.producthunt.com/en/articles/9883485-product-hunt-featuring-guidelines), [Reddit community self-promotion rules](https://www.business.reddit.com/learning-hub/articles/how-to-work-with-moderators-on-reddit).
 
