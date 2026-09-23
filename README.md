@@ -6,6 +6,12 @@ The model is replaceable. The memory belongs to the user. The long term goal is 
 
 > **Prototype status:** The app is an interactive frontend with fictional seed data. Changes are saved in this browser's `localStorage`. It has no real connectors, authentication, live AI, device telemetry, ticket purchases, or production MCP server. The simulated Ask YOU answers use seeded facts and respect available/private memory settings.
 
+## Explore the demo
+
+[Open the interactive YOU demo](https://you-relationship-memory.saccojoseph961968.chatgpt.site/) · [Follow the 90-second walkthrough](docs/DEMO.md)
+
+The public demo starts with **Alex**, a fictional persona, and invented people and events. It does not import contacts, read your computer, or connect to your accounts. Anything you type into the demo stays in that browser's local storage unless you choose to export it. Use fictional details when sharing screenshots or feedback.
+
 ## Try it locally
 
 Requires Node.js 22.13+.
