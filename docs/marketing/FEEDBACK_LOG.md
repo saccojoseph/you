@@ -8,10 +8,12 @@ This log is appended by the weekday feedback-and-growth loop. No private data ab
 
 - **GitHub (saccojoseph/you):** 0 stars, 0 forks, 0 open issues, no pull requests, discussions not enabled. No feedback yet. https://github.com/saccojoseph/you
 - **LinkedIn (launch post):** 1 comment, from Randy Heath. Category: opinion/question. He describes a deep, years-long relationship with his ChatGPT instance and asks how to avoid losing that "AI friend" if the provider changes pricing or shuts down, and whether the relationship can be made portable and who owns it. This directly validates YOU's core pitch (model-neutral, user-owned context). 10 reactions, 270 impressions, unanswered as of this run. https://www.linkedin.com/feed/update/urn:li:share:7508518775856746497/
-- **Reddit (r/SideProject and r/github threads):** Could not access either thread this run. The session's built-in browser blocks reddit.com under a platform safety policy (not a login issue, no permission prompt available), and the Claude-in-Chrome browser extension was not connected on this machine. Needs a manual check or a connected Chrome extension on a future run.
-- **Instagram (launch post):** Could not read comments. The built-in browser showed a logged-out view of the post (2 likes visible, comments hidden behind a login wall). Needs an Instagram sign-in in that browser to read comments on a future run.
+- **Reddit (r/SideProject and r/github threads):** Could not access either thread this run. Confirmed blocked under a platform safety policy in both the built-in browser and the Claude-in-Chrome extension ("This site is not allowed due to safety restrictions") — not a login or connection issue, no permission prompt available either way. Joe will need to check r/SideProject and the r/github megathread comment manually.
+- **Instagram (launch post):** Confirmed via the Claude-in-Chrome extension (signed in as Joe): 2 likes, no comments yet ("No comments yet. Start the conversation."). Nothing to draft.
 
 ### Reply drafts proposed (not posted — pending Joe's approval)
+
+Only one substantive unanswered comment was reachable this run (Instagram has none yet, Reddit was unreachable).
 
 1. Reply to Randy Heath on LinkedIn: https://www.linkedin.com/feed/update/urn:li:share:7508518775856746497/
    > Randy, that is exactly the problem I am trying to get at. Right now YOU is just a demo with fictional data, there is no real ChatGPT or ongoing-assistant integration yet. But the idea is that your memory should live outside any single assistant, so if a provider changes its terms or shuts down you still have it. I just added an import and export round trip to the prototype so you can see what taking your own data out and back in actually looks like. Curious what would make you trust handing that context to a new assistant in the first place.
