@@ -1,8 +1,10 @@
 # Reddit launch drafts
 
-These are community-specific drafts, not posts that have been published. Confirm the current community rules and account choice immediately before posting. Do not cross-post identical text or claim the prototype has live integrations.
+These are community-specific launch texts. Both were published from u/Liquidjojo1987 on September 23, 2026. Do not cross-post identical text or claim the prototype has live integrations.
 
 ## r/SideProject — feedback post
+
+Published: https://www.reddit.com/r/SideProject/comments/1wo5uk4/i_built_a_prototype_for_a_personal_ai_memory_you/
 
 **Title:** I built a prototype for a personal AI memory you could take between assistants
 
@@ -20,6 +22,8 @@ I would especially value feedback on one thing: **what would make you trust—or
 
 ## r/github — self-promotion megathread comment
 
+Published: https://www.reddit.com/r/github/comments/1jy8rea/comment/pbk8ch2/
+
 I'm building **YOU**, an MIT-licensed prototype for an inspectable personal context layer. The long-term goal is user-owned memory that can be shared selectively with different AI assistants rather than locked into one model. The current demo uses fictional data and browser storage; connectors and a real MCP/API service are roadmap items, not shipped features.
 
 Repo: https://github.com/saccojoseph/you
@@ -30,4 +34,4 @@ Stack: Next.js, TypeScript, React. I would welcome feedback on the provenance/co
 
 ## After posting
 
-Record the post URLs in this file. Answer substantive questions in the thread. Turn repeated concerns into GitHub issues. Do not ask for upvotes or use alternate accounts to boost engagement.
+Answer substantive questions in the threads. Turn repeated concerns into GitHub issues. Do not ask for upvotes or use alternate accounts to boost engagement.
