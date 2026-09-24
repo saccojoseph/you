@@ -31,7 +31,7 @@ npm ci
 npm run dev
 ```
 
-Open the local URL printed by the development server. `npm run build` makes a production build.
+Open the local URL printed by the development server. `npm test` checks the memory answer boundary; `npm run build` makes a production build.
 
 ## What works in the demo
 
@@ -40,8 +40,8 @@ Open the local URL printed by the development server. `npm run build` makes a pr
 - A memory browser with **known, inferred, unknown, and needs review** states, confidence, provenance, and verification dates.
 - People profiles, a relationship map, a sample timeline, and source explanations.
 - Manual memories, important dates, and reminders; profile editing; dismissing and handling suggestions.
-- A simulated Ask YOU view that answers from visible sample memory and says when it does not know.
-- Connection placeholders, per-memory availability, local export, and demo reset.
+- A simulated Ask YOU view that answers from the current available memory, carries source and confidence, and says when it does not know. Changed, hidden, or removed facts affect future answers.
+- Connection placeholders, per-memory availability, validated local import/export, and demo reset.
 
 ## Product principles
 
