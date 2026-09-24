@@ -41,7 +41,7 @@ Open the local URL printed by the development server. `npm test` checks the memo
 - People profiles, a relationship map, a sample timeline, and source explanations.
 - Manual memories, important dates, and reminders; profile editing; dismissing and handling suggestions.
 - A simulated Ask YOU view that answers from the current available memory, carries source and confidence, and says when it does not know. Changed, hidden, or removed facts affect future answers.
-- Connection placeholders, per-memory availability, local export, and demo reset.
+- Connection placeholders, per-memory availability, validated local import/export, and demo reset.
 
 ## Product principles
 

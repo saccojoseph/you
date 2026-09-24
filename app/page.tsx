@@ -11,6 +11,7 @@ import { YouMark } from "@/components/you-mark";
 import { flushSync } from "react-dom";
 import { connectors, events, insights, memories as seedMemories, people as seedPeople, type Insight, type Memory, type MemoryStatus, type Person } from "@/data/demo";
 import { answerFromMemory, type MemoryAnswer } from "@/lib/ask-memory";
+import { parseMemoryExport } from "@/lib/memory-export";
 
 type View = "for-you" | "memory" | "people" | "relationships" | "timeline" | "reminders" | "ask" | "connections" | "settings";
 type Modal = "add-memory" | "edit-person" | "add-date" | "reminder" | "action" | "reset" | "setup" | null;
@@ -129,23 +130,18 @@ export default function HomePage() {
   function addDate() { if (!selectedPerson || !draft.label.trim() || !draft.date) return; setDraft(prev => ({ ...prev, value: new Date(`${prev.date}T12:00:00`).toLocaleDateString("en-US", { month: "long", day: "numeric" }), subjectId: selectedPerson.id })); const newMemory: Memory = { id: `date-${Date.now()}`, subjectId: selectedPerson.id, category: "People", label: draft.label.trim(), value: new Date(`${draft.date}T12:00:00`).toLocaleDateString("en-US", { month: "long", day: "numeric" }), status: "known", confidence: 1, source: "You", sourceType: "user", observedAt: new Date().toISOString().slice(0, 10), lastVerified: new Date().toISOString().slice(0, 10), evidence: "You added this date directly.", privacy: "available" }; setData(prev => ({ ...prev, memories: [newMemory, ...prev.memories] })); setModal(null); setDraft({ label: "", value: "", subjectId: "self", date: "", reminder: "" }); setToast("Important date added."); }
   function savePerson() { if (!selectedPerson || !editingName.trim()) return; setData(prev => ({ ...prev, people: prev.people.map(p => p.id === selectedPerson.id ? { ...p, name: editingName.trim(), relation: editingRelation.trim() } : p) })); setModal(null); setToast("Person updated."); }
   function exportData() { const blob = new Blob([JSON.stringify({ format: "you-memory-export", version: 1, exportedAt: new Date().toISOString(), ...data }, null, 2)], { type: "application/json" }); const url = URL.createObjectURL(blob); const link = document.createElement("a"); link.href = url; link.download = "you-memory-export.json"; link.click(); URL.revokeObjectURL(url); setToast("Your memory export is ready."); }
-  function isValidImport(parsed: unknown): parsed is Partial<SavedState> & { memories: Memory[]; people: Person[] } {
-    if (!parsed || typeof parsed !== "object") return false;
-    const candidate = parsed as Record<string, unknown>;
-    return candidate.format === "you-memory-export" && Array.isArray(candidate.memories) && Array.isArray(candidate.people);
-  }
   function importData(file: File) {
     setImportError("");
+    if (file.size > 10 * 1024 * 1024) { setImportError("That file is too large for the demo. Choose a YOU export under 10 MB."); return; }
     const reader = new FileReader();
     reader.onload = () => {
       try {
-        const parsed: unknown = JSON.parse(String(reader.result));
-        if (!isValidImport(parsed)) { setImportError("That file doesn’t look like a YOU memory export."); return; }
-        const incoming: Partial<SavedState> = parsed;
-        setData(prev => ({ ...prev, ...incoming, memories: incoming.memories ?? prev.memories, people: incoming.people ?? prev.people }));
+        const incoming = parseMemoryExport(JSON.parse(String(reader.result)));
+        setData({ ...initialState, ...incoming, seedVersion: 3 });
         setToast("Memory imported. This replaced what was stored in this browser.");
-      } catch { setImportError("Could not read that file. Export a fresh copy and try again."); }
+      } catch (error) { setImportError(error instanceof Error ? error.message : "Could not read that file. Export a fresh copy and try again."); }
     };
+    reader.onerror = () => setImportError("Could not read that file. Export a fresh copy and try again.");
     reader.readAsText(file);
   }
   function finishOnboarding(answers: FirstRunAnswers) { const date = new Date().toISOString().slice(0, 10); const items = [
