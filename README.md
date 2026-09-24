@@ -40,7 +40,7 @@ Open the local URL printed by the development server. `npm test` checks the memo
 - A memory browser with **known, inferred, unknown, and needs review** states, confidence, provenance, and verification dates.
 - People profiles, a relationship map, a sample timeline, and source explanations.
 - Manual memories, important dates, and reminders; profile editing; dismissing and handling suggestions.
-- A simulated Ask YOU view that answers from the current available memory, carries source and confidence, and says when it does not know. Editing, hiding, or removing a fact changes future answers.
+- A simulated Ask YOU view that answers from the current available memory, carries source and confidence, and says when it does not know. Changed, hidden, or removed facts affect future answers.
 - Connection placeholders, per-memory availability, local export, and demo reset.
 
 ## Product principles
