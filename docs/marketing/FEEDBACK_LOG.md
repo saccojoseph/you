@@ -35,3 +35,23 @@ Only one substantive unanswered comment was reachable this run (Instagram has no
 - Reddit is inaccessible to this session's built-in browser (policy block); the Claude-in-Chrome extension was not connected. Either connect Chrome with the extension signed in, or plan to check Reddit manually.
 - Instagram requires a sign-in in the built-in browser to see comments.
 - The local build command doesn't run in this device shell due to a native-binding/architecture mismatch; lint and `tsc --noEmit` are used as the practical proportional check until that's fixed.
+
+## 2026-09-24 — manual catch-up after the schedule was paused
+
+### Feedback collected
+
+- **GitHub:** No issues or open pull requests. [PR #1](https://github.com/saccojoseph/you/pull/1) was merged and the public demo was deployed after the September 23 log; there are no outside reviews or PR comments. Discussions are not enabled.
+- **[r/SideProject](https://www.reddit.com/r/SideProject/comments/1wo5uk4/i_built_a_prototype_for_a_personal_ai_memory_you/):** Two substantive replies were visible. One argues that a refusal to share must be enforced by the memory layer rather than entrusted to an assistant prompt. The other suggests separating durable facts, episodic summaries, and temporary task state, with provenance and expiration; it also asks for review before export and retrieval-precision testing. These are product requests, not evidence that any of those controls exist today. The post showed 132 views when checked.
+- **[r/github](https://www.reddit.com/r/github/comments/1jy8rea/comment/pbk8ch2/):** No direct replies to the YOU comment.
+- **[Instagram](https://www.instagram.com/p/DdoY_u5juke/):** Two likes and no comments.
+- **[LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508518775856746497/):** Joe had already replied to the original portability question. The commenter followed up that portability also means preserving deliberately taught interaction preferences, such as tone, challenge, and source citations. The post showed 29 reactions and 899 impressions when checked. Do not treat a transferable assistant persona as a shipped capability.
+
+### Product action
+
+- Added name-aware retrieval to the demo's agent-facing `you_find_memories` page tool. A query for a person's name now finds that person's available memories while the existing private/excluded boundary stays in place. This is a small retrieval-quality fix, not a new connector or production agent API.
+- Added regression tests; all 13 tests, lint, TypeScript, and production build passed locally.
+- The refusal, retention, expiration, and export-review suggestions need a deliberate privacy/data-model decision before implementation. No privacy settings or live integrations changed.
+
+### Outreach
+
+- No new promotional post: launch posts were published yesterday. Reply drafts for the existing Reddit and LinkedIn conversations are awaiting Joe's approval; nothing was posted automatically.
