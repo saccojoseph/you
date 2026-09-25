@@ -9,7 +9,7 @@ export type Memory = {
   status: MemoryStatus;
   confidence: number | null;
   source: string;
-  sourceType: "user" | "email" | "calendar" | "contacts" | "inference" | "demo";
+  sourceType: "user" | "email" | "calendar" | "contacts" | "inference" | "demo" | "agent";
   observedAt: string;
   lastVerified: string | null;
   evidence: string;

@@ -7,7 +7,7 @@ export function searchAvailableMemories(query: string, memories: Memory[], peopl
 
   const names = new Map(people.map(person => [person.id, person.name]));
   return memories.filter(memory => {
-    if (memory.privacy !== "available") return false;
+    if (memory.privacy !== "available" || memory.status === "disputed") return false;
     const subject = memory.subjectId === "self" ? "You" : names.get(memory.subjectId) ?? "";
     return `${subject} ${memory.subjectId} ${memory.label} ${memory.value} ${memory.category}`.toLowerCase().includes(needle);
   }).slice(0, limit);

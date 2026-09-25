@@ -22,7 +22,7 @@ export type ContextGrant = {
 
 export type Evidence = {
   sourceId: string;
-  sourceType: "user" | "email" | "calendar" | "contacts" | "message" | "device" | "public";
+  sourceType: "user" | "email" | "calendar" | "contacts" | "message" | "device" | "public" | "agent";
   observedAt: string;
   excerpt?: string;
 };
@@ -49,7 +49,7 @@ export type ContextResult<T> = {
 
 export function mayReadFact(fact: PortableFact, grant: ContextGrant, now: Date = new Date()): boolean {
   if (grant.revokedAt || (grant.expiresAt && new Date(grant.expiresAt) <= now)) return false;
-  if (fact.visibility !== "available") return false;
+  if (fact.visibility !== "available" || fact.status === "disputed") return false;
   if (grant.personIds && !grant.personIds.includes(fact.subjectId)) return false;
   const scope = `${fact.category}.read` as ContextScope;
   return grant.scopes.includes(scope);
