@@ -61,9 +61,9 @@ Only one substantive unanswered comment was reachable this run (Instagram has no
 ### Feedback collected
 
 - **GitHub:** 0 stars, 0 forks, no issues, no open pull requests, discussions off. Only activity is Joe's merged [PR #1](https://github.com/saccojoseph/you/pull/1) and [PR #2](https://github.com/saccojoseph/you/pull/2). No outside feedback.
-- **[LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508518775856746497/):** Signed out in the built-in browser, so only the first comment was readable. The counter now shows 4 comments and 31 reactions (was 3 comment entries and 29 reactions on Sept 24), so there may be one new comment. Not verified.
+- **[LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508518775856746497/):** Rechecked after Joe signed in. The 4 comments are Randy's two comments and Joe's two replies; all answered. 31 reactions, about 1,100 impressions. New signal in Randy's follow-up: trust depends on which model provider receives the context, which supports per-assistant grants (opinion).
 - **Reddit ([r/SideProject](https://www.reddit.com/r/SideProject/comments/1wo5uk4/i_built_a_prototype_for_a_personal_ai_memory_you/), [r/github](https://www.reddit.com/r/github/comments/1jy8rea/comment/pbk8ch2/)):** Still blocked in the built-in browser by a platform safety policy; the Chrome extension was not connected. Not checked.
-- **[Instagram](https://www.instagram.com/p/DdoY_u5juke/):** Signed out view shows 2 likes and no visible comments.
+- **[Instagram](https://www.instagram.com/p/DdoY_u5juke/):** Rechecked signed in: 2 likes, 1 repost, no comments.
 
 ### Themes carried forward (from Sept 24)
 
@@ -80,7 +80,7 @@ Only one substantive unanswered comment was reachable this run (Instagram has no
 
 ### Reply drafts proposed (not posted)
 
-- LinkedIn: reply on taught interaction preferences.
+- LinkedIn: none needed; Joe already replied to both comments.
 - r/SideProject: replies on layer-enforced refusals and on memory types, only if still unanswered.
 
 ### Promotion
