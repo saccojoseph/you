@@ -55,3 +55,39 @@ Only one substantive unanswered comment was reachable this run (Instagram has no
 ### Outreach
 
 - No new promotional post: launch posts were published yesterday. Reply drafts for the existing Reddit and LinkedIn conversations are awaiting Joe's approval; nothing was posted automatically.
+
+## 2026-09-25 — weekday run
+
+### Feedback collected
+
+- **GitHub:** 0 stars, 0 forks, no issues, no open pull requests, discussions off. Only activity is Joe's merged [PR #1](https://github.com/saccojoseph/you/pull/1) and [PR #2](https://github.com/saccojoseph/you/pull/2). No outside feedback.
+- **[LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508518775856746497/):** Signed out in the built-in browser, so only the first comment was readable. The counter now shows 4 comments and 31 reactions (was 3 comment entries and 29 reactions on Sept 24), so there may be one new comment. Not verified.
+- **Reddit ([r/SideProject](https://www.reddit.com/r/SideProject/comments/1wo5uk4/i_built_a_prototype_for_a_personal_ai_memory_you/), [r/github](https://www.reddit.com/r/github/comments/1jy8rea/comment/pbk8ch2/)):** Still blocked in the built-in browser by a platform safety policy; the Chrome extension was not connected. Not checked.
+- **[Instagram](https://www.instagram.com/p/DdoY_u5juke/):** Signed out view shows 2 likes and no visible comments.
+
+### Themes carried forward (from Sept 24)
+
+- Refusals must be enforced by the memory layer, not a prompt (opinion / feature request).
+- Separate durable facts, episodic summaries, and temporary task state with expiry; review before export; retrieval-precision tests (feature request).
+- Portability should include taught interaction preferences such as tone, challenge, and citing sources (feature request).
+
+### Product action
+
+- Branch `feature/agent-memory-proposals`, commit `380678e` (local only, not pushed): the `you_add_memory` page tool now saves an agent-written memory as **Needs review** with "Agent proposal" provenance and no confidence, instead of a user-known fact. Ask YOU will not present it as true until the user confirms it. This follows the architecture rule that agents propose rather than silently rewrite the graph and relates to the layer-enforced boundary theme.
+  - `npm test`: 16/16 pass (3 new). `npx tsc --noEmit` clean. ESLint clean on changed files.
+  - `npm run build`: still fails in the device shell on the known missing `@rolldown/binding-linux-arm64` native module (environment issue, not this change).
+  - Uses `sourceType: "inference"` because the contract has no `agent` source type; adding one is left for Joe to decide.
+
+### Reply drafts proposed (not posted)
+
+- LinkedIn: reply on taught interaction preferences.
+- r/SideProject: replies on layer-enforced refusals and on memory types, only if still unanswered.
+
+### Promotion
+
+- None. Launch posts went out Sept 23; the plan's next owned-channel step is a week 2 walkthrough.
+
+### Blockers
+
+- LinkedIn and Instagram are signed out in the built-in browser; Reddit is policy-blocked there. Chrome extension not connected.
+- The device shell cannot delete files, so git left stale lock and temp files. They were moved to `_to_delete/` in the repo root (untracked) and the repo was left on `feature/agent-memory-proposals` because switching branches needs file deletion.
