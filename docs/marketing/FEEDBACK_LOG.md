@@ -62,7 +62,7 @@ Only one substantive unanswered comment was reachable this run (Instagram has no
 
 - **GitHub:** 0 stars, 0 forks, no issues, no open pull requests, discussions off. Only activity is Joe's merged [PR #1](https://github.com/saccojoseph/you/pull/1) and [PR #2](https://github.com/saccojoseph/you/pull/2). No outside feedback.
 - **[LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7508518775856746497/):** Rechecked after Joe signed in. The 4 comments are Randy's two comments and Joe's two replies; all answered. 31 reactions, about 1,100 impressions. New signal in Randy's follow-up: trust depends on which model provider receives the context, which supports per-assistant grants (opinion).
-- **Reddit ([r/SideProject](https://www.reddit.com/r/SideProject/comments/1wo5uk4/i_built_a_prototype_for_a_personal_ai_memory_you/), [r/github](https://www.reddit.com/r/github/comments/1jy8rea/comment/pbk8ch2/)):** Still blocked in the built-in browser by a platform safety policy; the Chrome extension was not connected. Not checked.
+- **Reddit ([r/SideProject](https://www.reddit.com/r/SideProject/comments/1wo5uk4/i_built_a_prototype_for_a_personal_ai_memory_you/), [r/github](https://www.reddit.com/r/github/comments/1jy8rea/comment/pbk8ch2/)):** A later signed-in check found both threads accessible. The SideProject thread shows the same two substantive comments and Joe's replies, with no new actionable feedback; the r/github comment has no direct replies.
 - **[Instagram](https://www.instagram.com/p/DdoY_u5juke/):** Rechecked signed in: 2 likes, 1 repost, no comments.
 
 ### Themes carried forward (from Sept 24)
@@ -89,5 +89,11 @@ Only one substantive unanswered comment was reachable this run (Instagram has no
 
 ### Blockers
 
-- LinkedIn and Instagram are signed out in the built-in browser; Reddit is policy-blocked there. Chrome extension not connected.
+- LinkedIn and Instagram were signed out during the earlier check; Reddit became accessible in a later signed-in check. Chrome extension not connected.
 - The device shell cannot delete files, so git left stale lock and temp files. They were moved to `_to_delete/` in the repo root (untracked) and the repo was left on `feature/agent-memory-proposals` because switching branches needs file deletion.
+
+### Later review of the unpublished branch
+
+- The browser check confirmed no new actionable Reddit feedback in either launch thread. GitHub still has no open issues or pull requests.
+- A local test found that `you_find_memories` could return the value of a disputed agent proposal even though Ask YOU would withhold it. The proposed fix excludes disputed facts from agent search and the portable read-grant helper, and records agent provenance as `agent` rather than `inference`.
+- Verification: 18 tests passed; TypeScript (`--incremental false`), lint, and the production build passed. This branch remains unpublished pending the normal GitHub review path. The unrelated `_to_delete/` directory was left untouched.

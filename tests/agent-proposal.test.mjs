@@ -3,6 +3,8 @@ import test from "node:test";
 import { agentProposedMemory } from "../lib/agent-proposal.ts";
 import { answerFromMemory } from "../lib/ask-memory.ts";
 import { parseMemoryExport } from "../lib/memory-export.ts";
+import { searchAvailableMemories } from "../lib/memory-search.ts";
+import { mayReadFact } from "../lib/context-contract.ts";
 import { memories, people } from "../data/demo.ts";
 
 const now = new Date("2026-09-25T12:00:00.000Z");
@@ -15,7 +17,7 @@ test("agent-written memories enter as needs review with agent provenance", () =>
   assert.equal(fact.label, "Favorite tea");
   assert.equal(fact.value, "Oolong");
   assert.match(fact.source, /Agent proposal/);
-  assert.notEqual(fact.sourceType, "user");
+  assert.equal(fact.sourceType, "agent");
 });
 
 test("Ask YOU does not present an unconfirmed agent proposal as fact", () => {
@@ -23,6 +25,17 @@ test("Ask YOU does not present an unconfirmed agent proposal as fact", () => {
   const answer = answerFromMemory("What is my favorite tea?", { memories: [fact, ...memories], people });
   assert.match(answer.text, /needs review/);
   assert.doesNotMatch(answer.text, /Oolong/);
+});
+
+test("agent search cannot retrieve an unconfirmed proposal's value", () => {
+  const fact = agentProposedMemory({ label: "Favorite tea", value: "Oolong", subjectId: "self" }, now);
+  assert.deepEqual(searchAvailableMemories("Oolong", [fact], []), []);
+});
+
+test("a read grant does not expose a disputed portable fact", () => {
+  const fact = { id: "candidate", subjectId: "self", category: "preferences", key: "favoriteTea", value: "Oolong", status: "disputed", confidence: null, evidence: [], lastVerified: null, visibility: "available" };
+  const grant = { clientId: "assistant", displayName: "Assistant", scopes: ["preferences.read"] };
+  assert.equal(mayReadFact(fact, grant, now), false);
 });
 
 test("agent proposals survive export and import as proposals", () => {

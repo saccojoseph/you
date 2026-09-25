@@ -18,7 +18,7 @@ export function agentProposedMemory(input: AgentProposalInput, now: Date = new D
     status: "disputed",
     confidence: null,
     source: "Agent proposal · page tool",
-    sourceType: "inference",
+    sourceType: "agent",
     observedAt: date,
     lastVerified: null,
     evidence: "Proposed by an agent through the YOU page tool. It needs your confirmation before YOU treats it as known.",

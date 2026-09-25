@@ -46,7 +46,7 @@ function validMemory(value: unknown): value is Memory {
       ? typeof confidence === "number" && Number.isFinite(confidence) && confidence >= 0 && confidence <= 1
       : confidence === null)
     && string(value.source)
-    && oneOf(value.sourceType, ["user", "email", "calendar", "contacts", "inference", "demo"])
+    && oneOf(value.sourceType, ["user", "email", "calendar", "contacts", "inference", "demo", "agent"])
     && string(value.observedAt) && (value.lastVerified === null || string(value.lastVerified))
     && string(value.evidence)
     && oneOf(value.privacy, ["available", "private", "excluded"]);
