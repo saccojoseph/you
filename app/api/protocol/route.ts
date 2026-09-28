@@ -7,7 +7,7 @@ export function GET() {
     version: "0.1.0-proposal",
     status: "design-preview",
     dataEndpoint: null,
-    transport: ["HTTP API (planned)", "MCP adapter (planned)"],
+    transport: ["HTTP API (planned)", "MCP stdio server (local preview over an exported file)"],
     modelNeutral: true,
     scopes: ["people.read", "preferences.read", "routines.read", "plans.read", "wellbeing.read", "insights.read", "memory.write"],
     rules: ["explicit grants", "source provenance", "uncertainty preserved", "private and excluded facts withheld", "revocable access", "auditable reads"],

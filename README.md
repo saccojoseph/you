@@ -4,7 +4,7 @@ YOU is an open source prototype for a personal context layer: a private, inspect
 
 The model is replaceable. The memory belongs to the user. The long term goal is a portable context service that any authorized harness can use through a scoped HTTP API or MCP adapter.
 
-> **Prototype status:** The app is an interactive frontend with fictional seed data. Changes are saved in this browser's `localStorage`. It has no real connectors, authentication, live AI, device telemetry, ticket purchases, or production MCP server. The simulated Ask YOU answers use seeded facts and respect available/private memory settings.
+> **Prototype status:** The app is an interactive frontend with fictional seed data. Changes are saved in this browser's `localStorage`. It has no real connectors, authentication, live AI, device telemetry, ticket purchases, or production MCP server. The simulated Ask YOU answers use seeded facts and respect available/private memory settings. A [local MCP server preview](docs/MCP.md) can serve an exported memory file to one assistant under the grants you set.
 
 ## Explore the demo
 
@@ -31,17 +31,19 @@ npm ci
 npm run dev
 ```
 
-Open the local URL printed by the development server. `npm test` checks the memory answer boundary; `npm run build` makes a production build.
+Open the local URL printed by the development server. `npm test` checks the memory answer boundary, agent grants, and the MCP server; `npm run build` makes a production build. `npm run mcp -- --file <export.json> --client claude` starts the local MCP server ([setup](docs/MCP.md)).
 
 ## What works in the demo
 
 - A first-run experience that selects possible sources and an assistant harness, creates a personal engram, and saves routine preferences. All connection and scheduling choices are simulated.
 - A calm suggestion feed for check-ins, plans, relationships, and open commitments.
-- A memory browser with **known, inferred, unknown, and needs review** states, confidence, provenance, and verification dates.
-- People profiles, a relationship map, a sample timeline, and source explanations.
+- A memory browser with **known, inferred, unknown, and needs review** states, confidence, provenance, and verification dates. You can confirm, correct, or fill in an unknown fact; corrections are recorded as coming from you, with the previous value kept in the evidence.
+- A **Review** inbox for agent proposals and facts you flagged. Nothing in it is used in answers or shared with agents until you accept it.
+- People you can add, edit, and remove; a relationship map built from each person's relationship; upcoming important dates; and a timeline that includes what you add.
 - Manual memories, important dates, and reminders; profile editing; dismissing and handling suggestions.
 - A simulated Ask YOU view that answers from the current available memory, carries source and confidence, and says when it does not know. Changed, hidden, or removed facts affect future answers.
-- Connection placeholders, per-memory availability, validated local import/export, and demo reset.
+- **Per-assistant grants** by topic (People, Preferences, Routines, Plans, Wellbeing, Propose memories). Every assistant starts with no access. Browser agents using the page's WebMCP tools are checked against their grant, and every call, allowed or denied, appears in an **access log**.
+- Connection placeholders, per-memory availability, validated local import/export with a preview of what leaves the browser, and demo reset.
 
 ## Product principles
 
@@ -55,10 +57,13 @@ Open the local URL printed by the development server. `npm test` checks the memo
 ## Repository map
 
 ```text
-app/page.tsx              Interactive prototype
+components/you/           Interactive prototype: app shell, views, dialogs, state, WebMCP tools
 app/api/protocol/route.ts  Read-only discovery of the proposed protocol
 data/demo.ts              Fictional people, memories, insights, events, connectors
 lib/context-contract.ts   Model-neutral fact, evidence, grant, and scope types
+lib/agent-access.ts       Per-assistant grants, the shared read policy, and access-log entries
+mcp/you-mcp.mjs           Local MCP server preview over an exported memory file
+docs/MCP.md               Connecting Claude, Codex, or another MCP client
 docs/ARCHITECTURE.md      Roadmap for a real local-first service and MCP/API
 docs/LAUNCH.md            Honest launch copy and outreach plan
 ```
@@ -67,7 +72,7 @@ docs/LAUNCH.md            Honest launch copy and outreach plan
 
 1. Split the browser demo state into a local encrypted datastore with migrations and an import/export format.
 2. Build a consented import pipeline: connector → raw event → identity candidate → fact candidate → user review → graph update. Keep raw source and extracted fact separate.
-3. Add an HTTP API with user authentication, scope grants, query logs, and an MCP adapter. The same service should work with Claude, OpenAI, Codex, local models, and custom agents.
+3. Add an HTTP API with user authentication, scope grants, query logs, and an MCP adapter. The same service should work with Claude, OpenAI, Codex, local models, and custom agents. The local MCP preview already enforces grants and logs access over a file; the service needs authentication and live sync.
 4. Validate identity matching and inference with uncertainty tests, provenance checks, and correction propagation.
 5. Add official connectors where permitted. Device activity and local event discovery need platform-specific feasibility work; they are not connected here.
 
