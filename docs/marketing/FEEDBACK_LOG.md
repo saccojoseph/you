@@ -97,3 +97,11 @@ Only one substantive unanswered comment was reachable this run (Instagram has no
 - The browser check confirmed no new actionable Reddit feedback in either launch thread. GitHub still has no open issues or pull requests.
 - A local test found that `you_find_memories` could return the value of a disputed agent proposal even though Ask YOU would withhold it. The proposed fix excludes disputed facts from agent search and the portable read-grant helper, and records agent provenance as `agent` rather than `inference`.
 - Verification: 18 tests passed; TypeScript (`--incremental false`), lint, and the production build passed. This branch remains unpublished pending the normal GitHub review path. The unrelated `_to_delete/` directory was left untouched.
+
+## 2026-09-28 — weekday run
+
+- **GitHub:** [PR #3](https://github.com/saccojoseph/you/pull/3) was merged and deployed after the previous run. No new issues, outside PR comments, or discussions (disabled). The repository has 1 star and 0 forks; a single star is not a product-traction conclusion.
+- **[r/SideProject](https://www.reddit.com/r/SideProject/comments/1wo5uk4/i_built_a_prototype_for_a_personal_ai_memory_you/):** No new comments beyond the previously logged feedback and replies. The post showed 172 views.
+- **[r/github](https://www.reddit.com/r/github/comments/1jy8rea/comment/pbk8ch2/):** No direct replies to the YOU comment.
+- **[Instagram](https://www.instagram.com/p/DdoY_u5juke/):** No comments; 2 likes and 1 repost, unchanged.
+- No new product change or promotion draft. The prior privacy, retention, and export-review requests remain open questions rather than shipped claims. The unrelated untracked `_to_delete/` directory was left untouched.
