@@ -1,4 +1,5 @@
 import type { Memory, Person } from "../data/demo";
+import { parseGrants, type Grants } from "./agent-access.ts";
 
 type ImportedMemory = {
   memories: Memory[];
@@ -16,6 +17,7 @@ type ImportedMemory = {
   publicDiscovery?: boolean;
   publicProfileUrl?: string;
   seedVersion?: number;
+  grants?: Grants;
 };
 
 function record(value: unknown): value is Record<string, unknown> {
@@ -104,6 +106,7 @@ export function parseMemoryExport(input: unknown): ImportedMemory {
     }
     result.permission = input.permission as Record<string, boolean>;
   }
+  if (input.grants !== undefined) result.grants = parseGrants(input.grants);
   if (input.seedVersion !== undefined) {
     if (!Number.isInteger(input.seedVersion) || (input.seedVersion as number) < 0) throw new Error("Invalid export seed version.");
     result.seedVersion = input.seedVersion as number;

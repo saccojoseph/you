@@ -43,6 +43,8 @@ export type Insight = {
 
 export type Event = {
   id: string;
+  /** ISO date, used for ordering the timeline. */
+  on: string;
   date: string;
   title: string;
   detail: string;
@@ -93,11 +95,11 @@ export const insights: Insight[] = [
 ];
 
 export const events: Event[] = [
-  { id: "e1", date: "Sep 20", title: "Mom mentioned an appointment", detail: "You saved a reminder for Thursday.", source: "Manual note · demo", personId: "mom" },
-  { id: "e2", date: "Sep 18", title: "Sarah may have started a new role", detail: "This has not been confirmed with Sarah.", source: "Illustrative update", personId: "sarah" },
-  { id: "e3", date: "Sep 10", title: "You offered Steve a contractor’s number", detail: "Potential commitment still open.", source: "Sample email", personId: "steve" },
-  { id: "e4", date: "Aug 19", title: "Caught up with Mike", detail: "Golf and a possible Italy trip came up.", source: "Sample email", personId: "mike" },
-  { id: "e5", date: "Jul 04", title: "Last catch-up with Chris", detail: "Your usual interval is two to three weeks.", source: "Sample interaction", personId: "chris" },
+  { id: "e1", on: "2026-09-20", date: "Sep 20", title: "Mom mentioned an appointment", detail: "You saved a reminder for Thursday.", source: "Manual note · demo", personId: "mom" },
+  { id: "e2", on: "2026-09-18", date: "Sep 18", title: "Sarah may have started a new role", detail: "This has not been confirmed with Sarah.", source: "Illustrative update", personId: "sarah" },
+  { id: "e3", on: "2026-09-10", date: "Sep 10", title: "You offered Steve a contractor’s number", detail: "Potential commitment still open.", source: "Sample email", personId: "steve" },
+  { id: "e4", on: "2026-08-19", date: "Aug 19", title: "Caught up with Mike", detail: "Golf and a possible Italy trip came up.", source: "Sample email", personId: "mike" },
+  { id: "e5", on: "2026-07-04", date: "Jul 04", title: "Last catch-up with Chris", detail: "Your usual interval is two to three weeks.", source: "Sample interaction", personId: "chris" },
 ];
 
 export const connectors: Connector[] = [

@@ -26,6 +26,8 @@ flowchart LR
 
 The TypeScript boundary in [`lib/context-contract.ts`](../lib/context-contract.ts) is intentionally vendor neutral. `/api/protocol` reports the proposed scopes, but it is discovery only in this prototype. Browser `localStorage` cannot securely serve an MCP client and is not presented as a production API.
 
+One read policy, `mayReadMemory` in [`lib/agent-access.ts`](../lib/agent-access.ts), is shared by every agent path: the page's WebMCP tools and the [local MCP server preview](MCP.md). A memory is readable only if it is available (not private), not awaiting review, and in a category the client was granted.
+
 ## Import pipeline
 
 1. The user grants one connector a narrow permission.
