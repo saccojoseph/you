@@ -25,7 +25,8 @@ export type PersonDraft = { name: string; relation: string; importance: Person["
 export type YouApi = {
   data: SavedState;
   setData: Dispatch<SetStateAction<SavedState>>;
-  today: Date;
+  /** The viewer's date, known only after hydration: the server may be in another time zone (workerd runs in UTC). */
+  today: Date | null;
   todayText: string;
   answers: MemoryAnswer[];
   navigate: (view: View) => void;

@@ -26,7 +26,7 @@ export function PeopleView() {
         <h2>{group}</h2>
         <div className="people-grid">
           {groupPeople.map(p => {
-            const moment = nextMomentFor(p, data.memories, today);
+            const moment = today ? nextMomentFor(p, data.memories, today) : p.nextMoment;
             return <button key={p.id} className="person-card" onClick={() => openPerson(p.id)}>
               <Avatar person={p} />
               <span className="person-card-copy"><strong>{p.name}</strong><span>{p.relation}</span><small>Last contact · {p.lastContact}</small>{moment && <em>{moment}</em>}</span>
@@ -42,7 +42,7 @@ export function PeopleView() {
 
 export function PersonProfile({ person }: { person: Person }) {
   const { data, today, openMemory, openModal, openPerson, closePerson } = useYou();
-  const dates = upcomingDates(data.memories.filter(m => m.subjectId === person.id), [person], today);
+  const dates = today ? upcomingDates(data.memories.filter(m => m.subjectId === person.id), [person], today) : [];
   const links = linkedPeople(person, data.people);
   const personEvents = events.filter(e => e.personId === person.id);
 
