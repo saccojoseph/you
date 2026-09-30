@@ -34,7 +34,7 @@ export function ForYouView() {
   const { data, setData, today, todayText, dismiss, remind, notify, handleInsight, showInsight, navigate, openMemory, openModal, openPerson } = useYou();
   const shown = visibleInsights(data.memories, data.dismissed, data.handled, data.mutedKinds);
   const spotlight = data.memories.find(m => m.id === "m-live-music" && m.status === "known");
-  const upcoming = upcomingDates(data.memories, data.people, today, 45).slice(0, 4);
+  const upcoming = today ? upcomingDates(data.memories, data.people, today, 45).slice(0, 4) : [];
   const pending = data.memories.filter(m => m.status === "disputed").length;
 
   function secondary(insight: Insight) {

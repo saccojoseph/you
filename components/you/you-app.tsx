@@ -45,7 +45,7 @@ export function YouApp() {
   const [answers, setAnswers] = useState<MemoryAnswer[]>([]);
   const [introOpen, setIntroOpen] = useState(false);
   const [toast, setToast] = useState("");
-  const [today, setToday] = useState(() => new Date());
+  const [today, setToday] = useState<Date | null>(null);
   const [todayText, setTodayText] = useState("Today");
   const [importError, setImportError] = useState("");
   const storageWarned = useRef(false);
